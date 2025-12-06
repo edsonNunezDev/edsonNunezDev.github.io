@@ -1,58 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" >
-
-<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    
-    <title>Edson NUNEZ</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="docs/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rafa Alcantar</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
-
 <body>
-    <div class="container">
-    <div class="col-xs-12">
-            <div class="text-center" style="padding-top: 30px; padding-bottom: 30px;">
-                <img class="backdrop linktree">
-                <h2 style="color: #ffffff; padding-top: 20px;">Mi curso de Git y Github</h2>
-            </div>
-    </div>
-    </div>
-
-
-    <div class="container">
-    <div class="col-xs-12">
-            <div class="text-center">
-                <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='https://platzi.com/cursos/docker-fundamentos/'" type="button" class="btn btn-outline-light shake" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 800;">Mi curso de Docker</button>
-                </div>
-                <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='http://aminespinoza.com'" type="button" class="btn btn-outline-light" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Mi sitio web</button>
-                </div>
-                <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='https://www.linkedin.com/in/aminespinoza/'" type="button" class="btn btn-outline-light" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Conecta en mi perfil de LinkedIn</button>
-                </div>
-                <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='https://www.instagram.com/aminespinoza10/'" type="button" class="btn btn-outline-light" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Visitame en Instagram</button>
-                </div>
-                <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='https://www.youtube.com/aminespinoza'" type="button" class="btn btn-outline-light" style="width: 80%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Mira mi canal de Youtube</button>
-                </div>
-            </div>
-    </div>
+  <header class="intro">
+    <div class="language-switcher">
+      <select id="lang-select" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+      </select>
     </div>
 
-        <div class="text-center">
-            <a href="https://codepen.io/nightcl4w/pen/dEjreJ" style="color: #34312f;" target="_blank">Creado por OrderMerch</a>
-        </div>
+    <div class="container header-flex">
+      <img src="profile.png" alt="Edson Nunez" class="profile-pic" />
+      <div class="header-text">
+        <h1>Edson Nunez</h1>
+        <p class="roles"
+           data-en="💻 RF and Electronic Engineer | 📊 ML Engineer | 📹 Machine Vision Engineer"
+           data-es="💻 Ingeniero de Electronica | 📊 ML Engineer | 📹 Machine Vision Engineer"
+           data-fr="💻 Ingénieur RF | 📊 Ingénieur ML | 📹 Ingénieur Vision Machine">
+          💻 Electronic Engineer | 📊 ML Engineer | 📹 Machine Vision Engineer
+        </p>
+        <p class="student"
+           data-en="🧑‍🎓 Student and Udemy and Platzi"
+           data-es="🧑‍🎓 Estudiante en Udemy y Platzi"
+           data-fr="🧑‍🎓 Étudiant sur Udemy et Platzi">
+          🧑‍🎓 Student at Udemy and Platzi
+        </p>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
+    <section>
+      <h2 data-en="Contact" data-es="Contacto" data-fr="Contact">Contact</h2>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!-- This pre-lander was created by Brandon Nilsson -->
-    <!-- You're welcome to edit, reproduce and change this template as long as original contributation stays present on the website at all times.  -->
+      <div class="contact-icons" aria-label="Contact links">
+        <a href="mailto:edson.nunez.pro@outlook.fr" class="icon-link" title="Email">
+          <img src="email.png" alt="Email" class="contact-icon" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/edson-nunez-90410234/" class="icon-link" target="_blank" rel="noopener" title="LinkedIn">
+          <img src="linkedin.png" alt="LinkedIn" class="contact-icon" />
+        </a>
+
+        <a href="https://github.com/edsonNunezDev" class="icon-link" target="_blank" rel="noopener" title="GitHub">
+          <img src="github.png" alt="GitHub" class="contact-icon" />
+        </a>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="exp-right">
+      <h2 data-en="About Me" data-es="Sobre mí" data-fr="À propos">About Me</h2>
+      <p data-en="about1" data-es="about1-es" data-fr="about1-fr">
+        Electronic engineer.
+      </p>
+      <p data-en="about2" data-es="about2-es" data-fr="about2-fr">
+        Electronic engineer.
+      </p>
+      <p data-en="about3" data-es="about3-es" data-fr="about3-fr">
+        Electronic engineer.
+      </p>
+    </section>
+
+    <script src="script.js"></script>
+  </main>
 </body>
-
 </html>

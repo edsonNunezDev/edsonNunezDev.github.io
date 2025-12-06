@@ -1,0 +1,298 @@
+/* ==========================================================================
+   style_new.css - integrated styles (base, header, profile, contact, utils)
+   ========================================================================== */
+
+/* Box-sizing + sensible defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #112240;
+  color: #ccd6f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  color: #ff9900;
+  text-decoration: none;
+}
+a:focus {
+  outline: 3px solid rgba(255,153,0,0.2);
+  outline-offset: 2px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  color: #ff9900;
+  margin: 0 0 0.5rem 0;
+}
+.roles,
+.student {
+  color: #8892b0;
+  margin-top: 0.5rem;
+}
+
+/* Layout container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Sections / dividers */
+section {
+  margin-top: 2rem;
+}
+
+.section-divider {
+  border: none;
+  border-top: 5px solid #233554;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+/* Header */
+header.intro {
+  background-color: #0a192f;
+  padding: 2rem 0;
+  position: relative;
+}
+
+/* Header layout: image + text */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Profile picture: circular, image centered and cropped via object-fit */
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #ff9900;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45), 0 0 0 4px rgba(17,34,64,0.2);
+  display: block;
+  background-color: #0a192f; /* fallback while image loads */
+}
+
+/* Header text */
+.header-text {
+  max-width: 600px;
+  text-align: left;
+}
+.header-text h1 {
+  margin-bottom: 0.25rem;
+}
+
+/* Experience grid (kept from original) */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  align-items: start;
+}
+
+/* Tables */
+table {
+  width: 40%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+table thead {
+  background-color: #112240;
+  text-align: left;
+  border-bottom: 5px solid #233554;
+}
+
+table th { color: #ff9900; width: 70%; }
+table td { color: #ffffff; padding: 0.2rem; vertical-align: middle; border: none; }
+table td img { max-height: 32px; vertical-align: middle; }
+table tbody tr { border-bottom: 2px solid #233554; }
+
+/* Projects table */
+table.projects {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-top: 1rem;
+}
+table.projects thead { border-bottom: 5px solid #233554; background-color: #112240; }
+table.projects th, table.projects td { padding: 0.5rem; vertical-align: middle; text-align: left; color: #ccd6f6; border: none; }
+table.projects th { color: #ff9900; }
+table.projects tbody tr { border-bottom: 2px solid #233554; }
+
+/* Tags */
+.tech-tag {
+  display: inline-block;
+  background-color: rgba(100,255,218,0.06);
+  color: #ff9900;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.2rem;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   CONTACT ICONS - show only icons; links active when icon clicked
+   ========================================================================== */
+
+.contact-icons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ========================================================================== 
+   Reemplazo: Contact icons mostrados dentro de círculos
+   ========================================================================== */
+
+/* Circular button wrapper for each icon */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(10,25,47,0.9), rgba(17,34,64,0.85));
+  border: 2px solid rgba(255,153,0,0.18);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Defensive: hide accidental link text */
+.icon-link > span,
+.icon-link > .link-text {
+  display: none !important;
+  font-size: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+}
+
+/* Icon image centered inside the circle */
+.contact-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.18s ease, filter 0.18s ease;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+}
+
+/* Hover / focus / active states with subtle effects */
+.icon-link:hover,
+.icon-link:focus {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+  border-color: rgba(255,153,0,0.28);
+}
+.icon-link:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Make the image pop slightly on hover/focus */
+.icon-link:hover .contact-icon,
+.icon-link:focus .contact-icon {
+  transform: scale(1.06);
+}
+
+/* Visible focus ring for keyboard users */
+.icon-link:focus {
+  outline: 3px solid rgba(255,153,0,0.16);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   SMALL UTILITIES
+   ========================================================================== */
+
+.section-divider-simple {
+  border: none;
+  border-bottom: 2px solid #233554;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+/* Contact layout for very small screens: stack icons */
+@media (max-width: 520px) {
+  .header-flex { gap: 1rem; padding: 0 1rem; }
+  .profile-pic { width: 140px; height: 140px; }
+  .contact-icons { gap: 1rem; }
+  .icon-link { width: 56px; height: 56px; border-radius: 50%; }
+  .contact-icon { width: 36px; height: 36px; }
+  .container { padding: 1rem; }
+}
+
+/* Larger screens: center content nicely */
+@media (min-width: 900px) {
+  .header-text { text-align: left; }
+  .header-flex { justify-content: flex-start; }
+}
+
+/* ==========================================================================
+   OPCIÓN A: colocar el selector dentro del header en la esquina superior derecha
+   ========================================================================== */
+
+/* Asegura que el header sea el contenedor de referencia */
+header.intro {
+  /* position already set above, but ensure relative for the absolute placement */
+  position: relative;
+}
+
+/* Coloca el selector en la esquina superior derecha del header */
+.language-switcher {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+/* Estilo visual del select */
+.language-switcher select {
+  background-color: #0a192f;
+  border: 1px solid #8892b0;
+  color: #ccd6f6;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.08s ease;
+}
+.language-switcher select:focus {
+  outline: none;
+  border-color: #ff9900;
+  box-shadow: 0 4px 14px rgba(255,153,0,0.12);
+}
+
+/* Ajustes para móviles */
+@media (max-width: 520px) {
+  .language-switcher { top: 8px; right: 8px; }
+  .language-switcher select { padding: 5px 8px; font-size: 0.82rem; }
+}
