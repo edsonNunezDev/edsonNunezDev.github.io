@@ -9,11 +9,13 @@
   box-sizing: border-box;
 }
 
-html, body {
+/* Base */
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #112240;
   color: #ccd6f6;
   -webkit-font-smoothing: antialiased;
@@ -25,16 +27,21 @@ a {
   color: #ff9900;
   text-decoration: none;
 }
+
 a:focus {
-  outline: 3px solid rgba(255,153,0,0.2);
+  outline: 3px solid rgba(255, 153, 0, 0.2);
   outline-offset: 2px;
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: #ff9900;
   margin: 0 0 0.5rem 0;
 }
+
 .roles,
 .student {
   color: #8892b0;
@@ -64,7 +71,7 @@ section {
 header.intro {
   background-color: #0a192f;
   padding: 2rem 0;
-  position: relative;
+  position: relative; /* referencia para topbar y language-switcher */
 }
 
 /* Header layout: image + text */
@@ -76,7 +83,7 @@ header.intro {
   flex-wrap: wrap;
 }
 
-/* Profile picture: circular, image centered and cropped with object-fit */
+/* Profile picture: circular */
 .profile-pic {
   width: 200px;
   height: 200px;
@@ -84,9 +91,10 @@ header.intro {
   object-fit: cover;
   object-position: center;
   border: 2px solid #ff9900;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.45), 0 0 0 4px rgba(17,34,64,0.2);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45),
+    0 0 0 4px rgba(17, 34, 64, 0.2);
   display: block;
-  background-color: #0a192f; /* fallback while image loads */
+  background-color: #0a192f;
 }
 
 /* Header text */
@@ -94,11 +102,12 @@ header.intro {
   max-width: 600px;
   text-align: left;
 }
+
 .header-text h1 {
   margin-bottom: 0.25rem;
 }
 
-/* Experience grid (kept from original) */
+/* Experience grid */
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -121,27 +130,61 @@ table thead {
   border-bottom: 5px solid #233554;
 }
 
-table th { color: #ff9900; width: 70%; }
-table td { color: #ffffff; padding: 0.2rem; vertical-align: middle; border: none; }
-table td img { max-height: 32px; vertical-align: middle; }
-table tbody tr { border-bottom: 2px solid #233554; }
+table th {
+  color: #ff9900;
+  width: 70%;
+}
 
-/* Projects table */
+table td {
+  color: #ffffff;
+  padding: 0.2rem;
+  vertical-align: middle;
+  border: none;
+}
+
+table td img {
+  max-height: 32px;
+  vertical-align: middle;
+}
+
+table tbody tr {
+  border-bottom: 2px solid #233554;
+}
+
+/* Projects table (full width) */
 table.projects {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   margin-top: 1rem;
 }
-table.projects thead { border-bottom: 5px solid #233554; background-color: #112240; }
-table.projects th, table.projects td { padding: 0.5rem; vertical-align: middle; text-align: left; color: #ccd6f6; border: none; }
-table.projects th { color: #ff9900; }
-table.projects tbody tr { border-bottom: 2px solid #233554; }
+
+table.projects thead {
+  border-bottom: 5px solid #233554;
+  background-color: #112240;
+}
+
+table.projects th,
+table.projects td {
+  padding: 0.5rem;
+  vertical-align: middle;
+  text-align: left;
+  color: #ccd6f6;
+  border: none;
+}
+
+table.projects th {
+  color: #ff9900;
+}
+
+table.projects tbody tr {
+  border-bottom: 2px solid #233554;
+}
 
 /* Tags */
 .tech-tag {
   display: inline-block;
-  background-color: rgba(100,255,218,0.06);
+  background-color: rgba(100, 255, 218, 0.06);
   color: #ff9900;
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
@@ -152,7 +195,7 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
 }
 
 /* ==========================================================================
-   CONTACT ICONS - show only icons; links active when icon is clicked
+   CONTACT ICONS
    ========================================================================== */
 
 .contact-icons {
@@ -163,10 +206,6 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
   justify-content: flex-start;
 }
 
-/* ========================================================================== 
-   Replacement: Contact icons displayed inside circles
-   ========================================================================== */
-
 /* Circular button wrapper for each icon */
 .icon-link {
   display: inline-flex;
@@ -175,15 +214,20 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgba(10,25,47,0.9), rgba(17,34,64,0.85));
-  border: 2px solid rgba(255,153,0,0.18);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 47, 0.9),
+    rgba(17, 34, 64, 0.85)
+  );
+  border: 2px solid rgba(255, 153, 0, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
   overflow: hidden;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* Defensive: hide possible link text */
+/* Hide possible link text */
 .icon-link > span,
 .icon-link > .link-text {
   display: none !important;
@@ -194,42 +238,43 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
   line-height: 0 !important;
 }
 
-/* Icon image almost as big as the circle, cropped inside */
+/* Icon image */
 .contact-icon {
   display: block;
-  width: 110%;          /* o 90%, según lo que te guste más */
+  width: 110%;
   height: 110%;
-  object-fit: cover;   /* importante: recorta la imagen */
+  object-fit: cover;
   object-position: center;
   transition: transform 0.18s ease, filter 0.18s ease;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
 }
 
-/* Hover / focus / active states with subtle effects */
+/* Hover / focus / active states */
 .icon-link:hover,
 .icon-link:focus {
   transform: translateY(-3px) scale(1.07);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.55);
-  border-color: rgba(255,153,0,0.28);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 153, 0, 0.28);
 }
+
 .icon-link:active {
   transform: translateY(0) scale(0.98);
 }
 
-/* Make the image pop slightly on hover/focus */
+/* Image effect on hover */
 .icon-link:hover .contact-icon,
 .icon-link:focus .contact-icon {
   transform: scale(1.06);
 }
 
-/* Visible focus ring for keyboard users */
+/* Visible focus ring */
 .icon-link:focus {
-  outline: 3px solid rgba(255,153,0,0.16);
+  outline: 3px solid rgba(255, 153, 0, 0.16);
   outline-offset: 4px;
 }
 
 /* ==========================================================================
-   SMALL UTILITIES
+   UTILIDADES
    ========================================================================== */
 
 .section-divider-simple {
@@ -239,33 +284,69 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
   width: 100%;
 }
 
-/* Contact layout for very small screens: stack icons */
-@media (max-width: 520px) {
-  .header-flex { gap: 1rem; padding: 0 1rem; }
-  .profile-pic { width: 140px; height: 140px; }
-  .contact-icons { gap: 1rem; }
-  .icon-link { width: 56px; height: 56px; border-radius: 50%; }
-  .contact-icon { width: 36px; height: 36px; }
-  .container { padding: 1rem; }
+/* Visually hidden (labels, etc.) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* Larger screens: center content nicely */
+/* Responsive */
+@media (max-width: 520px) {
+  .header-flex {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  .contact-icons {
+    gap: 1rem;
+  }
+
+  .icon-link {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
 @media (min-width: 900px) {
-  .header-text { text-align: left; }
-  .header-flex { justify-content: flex-start; }
+  .header-text {
+    text-align: left;
+  }
+
+  .header-flex {
+    justify-content: flex-start;
+  }
 }
 
 /* ==========================================================================
-   OPTION A: place the selector inside the header in the top-right corner
+   LANGUAGE SWITCHER (selector idioma arriba derecha)
    ========================================================================== */
 
-/* Ensure the header acts as the reference container */
-header.intro {
-  /* position already set above, but ensure relative for absolute placement */
-  position: relative;
-}
-
-/* Place the language switcher in the top-right corner of the header */
 .language-switcher {
   position: absolute;
   top: 16px;
@@ -273,7 +354,6 @@ header.intro {
   z-index: 1000;
 }
 
-/* Visual style of the select element */
 .language-switcher select {
   background-color: #0a192f;
   border: 1px solid #8892b0;
@@ -282,17 +362,96 @@ header.intro {
   font-size: 0.9rem;
   cursor: pointer;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.08s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.08s ease;
 }
+
 .language-switcher select:focus {
   outline: none;
   border-color: #ff9900;
-  box-shadow: 0 4px 14px rgba(255,153,0,0.12);
+  box-shadow: 0 4px 14px rgba(255, 153, 0, 0.12);
 }
 
-/* Adjustments for mobile devices */
 @media (max-width: 520px) {
-  .language-switcher { top: 8px; right: 8px; }
-  .language-switcher select { padding: 5px 8px; font-size: 0.82rem; }
+  .language-switcher {
+    top: 8px;
+    right: 8px;
+  }
+
+  .language-switcher select {
+    padding: 5px 8px;
+    font-size: 0.82rem;
+  }
+}
+
+/* ==========================================================================
+   BOTÓN "PROJECTOS" (arriba izquierda) + MENÚ
+   ========================================================================== */
+
+.topbar-projects {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  margin: 0;
+}
+
+.topbar-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ff9900;
+  user-select: none;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #ff9900;
+  background-color: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.topbar-item:hover {
+  background-color: rgba(255, 153, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Caja del menú desplegable */
+.dropdown {
+  position: absolute;
+  top: 135%;
+  left: 0;
+  min-width: 180px;      /* antes 200px o más */
+  max-width: 220px;      /* límite opcional */
+  background-color: #112240;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  padding: 0.4rem 0;
+  display: none;
+  z-index: 1000;
+  border: 1px solid #233554;
+}
+
+/* Clase que muestra el menú */
+.dropdown.open {
+  display: block;
+}
+
+/* Elementos del menú */
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  text-align: left;
+  border: none;
+  background: none;
+  color: #ccd6f6;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #233554;
 }

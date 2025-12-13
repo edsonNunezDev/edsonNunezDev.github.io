@@ -1,190 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Edson Nunez - Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="docs/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="intro">
-    <!-- Language switcher -->
+    <!-- Botón Projectos en la esquina superior izquierda -->
+    <nav class="topbar-projects">
+      <div class="topbar-item" data-dropdown="proyectosMenu">
+        Projectos
+        <div id="proyectosMenu" class="dropdown">
+          <button class="dropdown-item" type="button">Proyecto 1</button>
+          <button class="dropdown-item" type="button">Proyecto 2</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Selector de idioma en la esquina superior derecha -->
     <div class="language-switcher">
+      <label for="lang-select" class="visually-hidden">Language</label>
       <select id="lang-select" onchange="changeLanguage(this.value)">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-        <option value="fr">Français</option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
       </select>
     </div>
 
-    <div class="container header-flex">
-      <!-- Profile image -->
-      <img src="docs/profile.png" alt="Profile picture" class="profile-pic">
+    <div class="container">
+      <div class="header-flex">
+        <img
+          src="docs/profile.png"
+          alt="Profile picture"
+          class="profile-pic"
+        />
 
-      <!-- Header text -->
-      <div class="header-text">
-        <h1>Edson Nunez</h1>
-        <p id="roles"></p>
-        <p id="student"></p>
+        <div class="header-text">
+          <h1 id="name">Edson NUNEZ</h1>
+          <p id="roles" class="roles">
+            💻 Electronic Engineer | 📊 AI and ML Engineer
+          </p>
+          <p id="student" class="student">
+            🧑🎓 Self‑taught student aspiring AI, ML and DB Engineer
+          </p>
+
+          <section class="contact-icons">
+            <a href="mailto:edson.nunez@outlook.fr" class="icon-link" aria-label="Email">
+              <img src="docs/email.png" alt="" class="contact-icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/edson-nunez-90410234" class="icon-link" aria-label="LinkedIn">
+              <img src="docs/linkedin.png" alt="" class="contact-icon" />
+            </a>
+            <a href="https://github.com/edsonNunezDev/" class="icon-link" aria-label="GitHub">
+              <img src="docs/github.png" alt="" class="contact-icon" />
+            </a>
+          </section>
+        </div>
       </div>
     </div>
   </header>
 
   <main class="container">
-	<!-- ===== Contact Section ===== -->
-	<section id="contact-section">
-		<h2 id="contact"
-			data-en="Contact"
-			data-es="Contacto"
-			data-fr="Contact">
-			Contact
-		</h2>
-
-		<hr class="section-divider-simple">
-
-		<div class="contact-icons" aria-label="Contact links">
-		<a href="mailto:edson.nunez@outlook.fr"
-			class="icon-link"
-			title="Email">
-			<img src="docs/email.png" alt="Email" class="contact-icon">
-		</a>
-
-		<a href="https://www.linkedin.com/in/edson-nunez-90410234"
-			class="icon-link"
-			target="_blank"
-			rel="noopener"
-			title="LinkedIn">
-			<img src="docs/linkedin.png" alt="LinkedIn" class="contact-icon">
-		</a>
-
-		<a href="https://github.com/edsonNunezDev/"
-			class="icon-link"
-			target="_blank"
-			rel="noopener"
-			title="GitHub">
-			<img src="docs/github.png" alt="GitHub" class="contact-icon">
-		</a>
-		</div>
-	</section>
-  
-    <!-- Navigation / section titles -->
-    <section id="about-section">
-      <h2 id="about"></h2>
-      <hr class="section-divider-simple">
-      <p id="about1"></p>
-      <p id="about2"></p>
-      <p id="about3"></p>
+    <!-- Sobre mí -->
+    <section>
+      <h2 id="about">About Me</h2>
+      <hr class="section-divider" />
+      <p id="about1">Hi,</p>
+      <p id="about2">
+        I’m a young person (at least in spirit) full of energy and eager to take
+        on different kinds of projects to learn about emerging AI-related
+        technologies.
+      </p>
+      <p id="about3">
+        I also want to develop useful applications that make it easier to
+        understand and learn complex concepts.
+      </p>
     </section>
 
-    <section id="experience-section">
-      <h2 id="experience"></h2>
-      <hr class="section-divider-simple">
-
-      <div class="experience-grid">
-        <div>
-          <h3 id="expTitle1"></h3>
-          <p id="expDate1"></p>
-        </div>
-        <div>
-          <h3 id="expTitle2"></h3>
-          <p id="expDate2"></p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects-section">
-      <h2 id="projects"></h2>
-      <hr class="section-divider-simple">
+    <!-- Tabla de proyectos -->
+    <section>
+      <h2 id="projects">Projects</h2>
+      <hr class="section-divider" />
 
       <table class="projects">
         <thead>
           <tr>
-            <th id="year"></th>
-            <th id="project"></th>
-            <th id="company"></th>
-            <th id="tech"></th>
+            <th id="year">Year</th>
+            <th id="project">Project</th>
+            <th id="tech">Technologies</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>2024</td>
-            <td id="project7"></td>
-            <td>Personal</td>
-            <td>HTML, Javascript, CSS</td>
+            <td id="project7">Personal web page</td>
+            <td>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </td>
           </tr>
           <tr>
-            <td>2025</td>
-            <td id="project8"></td>
-            <td>Personal</td>
-            <td>Python, Javascript</td>
+            <td>2024</td>
+            <td id="project8">Tools to calculate RF power budget</td>
+            <td>
+              <span class="tech-tag">Python</span>
+            </td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section id="skills-section">
-      <h2 id="skills"></h2>
-      <hr class="section-divider-simple">
-      <!-- Ejemplo: podrías usar IDs o data-i18n si luego amplías el JSON -->
+    <!-- Skills -->
+    <section>
+      <h2 id="skills">Languages and Technologies</h2>
+      <hr class="section-divider" />
+
       <table>
         <thead>
           <tr>
-            <th id="technology"></th>
-            <th id="proficiency"></th>
+            <th id="technology">Technology</th>
+            <th id="proficiency">Proficiency</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Python</td>
-            <td>Intermediate</td>
+            <td>Advanced</td>
           </tr>
           <tr>
             <td>JavaScript</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>C/C++</td>
             <td>Intermediate</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section id="languages-section">
-      <h2 id="languages"></h2>
-      <hr class="section-divider-simple">
+    <!-- Educación -->
+    <section>
+      <h2 id="education">Education</h2>
+      <hr class="section-divider" />
+      <p>RF & Microwave Engineering – Sorbonne University, 2013–2014.</p>
+	  <p>Electronic Engineering – Simon Bolivar University, 2006–2012.</p>
+	  
+    </section>
+
+    <!-- Idiomas -->
+    <section>
+      <h2 id="languages">Languages</h2>
+      <hr class="section-divider" />
       <ul>
-        <li>French – Advanced</li>
-		<li>English – Advanced</li>
-		<li>Spanish – Native</li>
-        
+		<li>French – Native</li>
+        <li>Spanish – Native</li>
+        <li>English – Advanced</li>
       </ul>
     </section>
 
-    <section id="strengths-section">
-      <h2 id="strengths"></h2>
-      <hr class="section-divider-simple">
+    <!-- Fortalezas -->
+    <section>
+      <h2 id="strengths">Strengths</h2>
+      <hr class="section-divider" />
       <ul>
-        <li>Debugging issues</li>
-        <li>Planning</li>
-        <li>Teamwork</li>
+        <li>Analytical thinking.</li>
+        <li>Continuous learning.</li>
+		<li>Planning</li>
       </ul>
     </section>
 
-    <section id="certifications-section">
-      <h2 id="certifications"></h2>
-      <hr class="section-divider-simple">
-      <!-- Rellena con tus certificaciones reales -->
+    <!-- Certificaciones -->
+    <section>
+      <h2 id="certifications">Certifications</h2>
+      <hr class="section-divider" />
       <ul>
         <li>ETH Zürich (2017) : ASD.1x: Agile Software Development</li>
       </ul>
     </section>
 
-    <section id="learning-section">
-      <h2 id="learning"></h2>
-      <hr class="section-divider-simple">
+    <!-- Actualmente aprendiendo -->
+    <section>
+      <h2 id="learning">Currently Learning</h2>
+      <hr class="section-divider" />
       <ul>
         <li>Cloud Computing</li>
       </ul>
     </section>
-
   </main>
 
   <script src="script.js"></script>
