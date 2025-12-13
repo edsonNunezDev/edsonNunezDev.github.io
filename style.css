@@ -331,6 +331,12 @@ table.projects tbody tr {
   table {
     width: 100%;
   }
+
+  /* Opción 2: botón Projectos arriba a la izquierda pero visible */
+  .topbar-projects {
+    top: 8px;
+    left: 8px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -371,6 +377,14 @@ table.projects tbody tr {
   outline: none;
   border-color: #ff9900;
   box-shadow: 0 4px 14px rgba(255, 153, 0, 0.12);
+}
+
+/* Label visible para "Language" */
+.language-label {
+  margin-right: 8px;
+  color: #ccd6f6;
+  font-size: 0.9rem;
+  vertical-align: middle;
 }
 
 @media (max-width: 520px) {
@@ -423,8 +437,8 @@ table.projects tbody tr {
   position: absolute;
   top: 135%;
   left: 0;
-  min-width: 180px;      /* antes 200px o más */
-  max-width: 220px;      /* límite opcional */
+  min-width: 180px;
+  max-width: 220px;
   background-color: #112240;
   border-radius: 6px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
@@ -443,7 +457,7 @@ table.projects tbody tr {
 .dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.45rem 0.9rem;
+  padding: 0.35rem 0.7rem;
   font-size: 0.9rem;
   text-align: left;
   border: none;
