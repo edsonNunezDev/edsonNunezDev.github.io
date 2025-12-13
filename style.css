@@ -76,7 +76,7 @@ header.intro {
   flex-wrap: wrap;
 }
 
-/* Profile picture: circular, image centered and cropped via object-fit */
+/* Profile picture: circular, image centered and cropped with object-fit */
 .profile-pic {
   width: 200px;
   height: 200px;
@@ -152,7 +152,7 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
 }
 
 /* ==========================================================================
-   CONTACT ICONS - show only icons; links active when icon clicked
+   CONTACT ICONS - show only icons; links active when icon is clicked
    ========================================================================== */
 
 .contact-icons {
@@ -164,7 +164,7 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
 }
 
 /* ========================================================================== 
-   Reemplazo: Contact icons mostrados dentro de círculos
+   Replacement: Contact icons displayed inside circles
    ========================================================================== */
 
 /* Circular button wrapper for each icon */
@@ -183,7 +183,7 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-/* Defensive: hide accidental link text */
+/* Defensive: hide possible link text */
 .icon-link > span,
 .icon-link > .link-text {
   display: none !important;
@@ -194,12 +194,12 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
   line-height: 0 !important;
 }
 
-/* Icon image centered inside the circle */
+/* Icon image almost as big as the circle, cropped inside */
 .contact-icon {
   display: block;
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
+  width: 110%;          /* o 90%, según lo que te guste más */
+  height: 110%;
+  object-fit: cover;   /* importante: recorta la imagen */
   object-position: center;
   transition: transform 0.18s ease, filter 0.18s ease;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
@@ -256,16 +256,16 @@ table.projects tbody tr { border-bottom: 2px solid #233554; }
 }
 
 /* ==========================================================================
-   OPCIÓN A: colocar el selector dentro del header en la esquina superior derecha
+   OPTION A: place the selector inside the header in the top-right corner
    ========================================================================== */
 
-/* Asegura que el header sea el contenedor de referencia */
+/* Ensure the header acts as the reference container */
 header.intro {
-  /* position already set above, but ensure relative for the absolute placement */
+  /* position already set above, but ensure relative for absolute placement */
   position: relative;
 }
 
-/* Coloca el selector en la esquina superior derecha del header */
+/* Place the language switcher in the top-right corner of the header */
 .language-switcher {
   position: absolute;
   top: 16px;
@@ -273,7 +273,7 @@ header.intro {
   z-index: 1000;
 }
 
-/* Estilo visual del select */
+/* Visual style of the select element */
 .language-switcher select {
   background-color: #0a192f;
   border: 1px solid #8892b0;
@@ -291,7 +291,7 @@ header.intro {
   box-shadow: 0 4px 14px rgba(255,153,0,0.12);
 }
 
-/* Ajustes para móviles */
+/* Adjustments for mobile devices */
 @media (max-width: 520px) {
   .language-switcher { top: 8px; right: 8px; }
   .language-switcher select { padding: 5px 8px; font-size: 0.82rem; }

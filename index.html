@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Edson NUNEZ</title>
+  <meta charset="UTF-8">
+  <title>Edson Nunez - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="docs/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="docs/style.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="intro">
+    <!-- Language switcher -->
     <div class="language-switcher">
       <select id="lang-select" onchange="changeLanguage(this.value)">
         <option value="en">English</option>
@@ -18,60 +19,174 @@
     </div>
 
     <div class="container header-flex">
-      <img src="docs/profile.png" alt="Edson NUNEZ" class="profile-pic" />
+      <!-- Profile image -->
+      <img src="docs/profile.png" alt="Profile picture" class="profile-pic">
+
+      <!-- Header text -->
       <div class="header-text">
         <h1>Edson Nunez</h1>
-        <p class="roles"
-           data-en="💻 Software Engineer | 📊 ML Engineer | 📹 Machine Vision Engineer"
-           data-es="💻 Ingeniero de Software | 📊 ML Engineer | 📹 Machine Vision Engineer"
-           data-fr="💻 Ingénieur Logiciel | 📊 Ingénieur ML | 📹 Ingénieur Vision Machine">
-          💻 Software Engineer | 📊 ML Engineer | 📹 Machine Vision Engineer
-        </p>
-        <p class="student"
-           data-en="🧑‍🎓 Student at Udemy, Platzi, LinkedIn Learning and Santander Open Academy"
-           data-es="🧑‍🎓 Estudiante en Udemy, Platzi, LinkedIn Learning y Santander Open Academy"
-           data-fr="🧑‍🎓 Étudiant sur Udemy, Platzi, LinkedIn Learning et Santander Open Academy">
-          🧑‍🎓 Student at Udemy and Platzi
-        </p>
+        <p id="roles"></p>
+        <p id="student"></p>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section>
-      <h2 data-en="Contact" data-es="Contacto" data-fr="Contact">Contact</h2>
+	<!-- ===== Contact Section ===== -->
+	<section id="contact-section">
+		<h2 id="contact"
+			data-en="Contact"
+			data-es="Contacto"
+			data-fr="Contact">
+			Contact
+		</h2>
 
-      <div class="contact-icons" aria-label="Contact links">
-        <a href="mailto:edson.nunez.pro@outlook.fr" class="icon-link" title="Email">
-          <img src="docs/email.png" alt="Email" class="contact-icon" />
-        </a>
+		<hr class="section-divider-simple">
 
-        <a href="https://www.linkedin.com/in/edson-nunez-90410234/" class="icon-link" target="_blank" rel="noopener" title="LinkedIn">
-          <img src="docs/linkedin.png" alt="LinkedIn" class="contact-icon" />
-        </a>
+		<div class="contact-icons" aria-label="Contact links">
+		<a href="mailto:edson.nunez@outlook.fr"
+			class="icon-link"
+			title="Email">
+			<img src="docs/email.png" alt="Email" class="contact-icon">
+		</a>
 
-        <a href="https://github.com/edsonNunezDev" class="icon-link" target="_blank" rel="noopener" title="GitHub">
-          <img src="docs/github.png" alt="GitHub" class="contact-icon" />
-        </a>
+		<a href="https://www.linkedin.com/in/edson-nunez-90410234"
+			class="icon-link"
+			target="_blank"
+			rel="noopener"
+			title="LinkedIn">
+			<img src="docs/linkedin.png" alt="LinkedIn" class="contact-icon">
+		</a>
+
+		<a href="https://github.com/edsonNunezDev/"
+			class="icon-link"
+			target="_blank"
+			rel="noopener"
+			title="GitHub">
+			<img src="docs/github.png" alt="GitHub" class="contact-icon">
+		</a>
+		</div>
+	</section>
+  
+    <!-- Navigation / section titles -->
+    <section id="about-section">
+      <h2 id="about"></h2>
+      <hr class="section-divider-simple">
+      <p id="about1"></p>
+      <p id="about2"></p>
+      <p id="about3"></p>
+    </section>
+
+    <section id="experience-section">
+      <h2 id="experience"></h2>
+      <hr class="section-divider-simple">
+
+      <div class="experience-grid">
+        <div>
+          <h3 id="expTitle1"></h3>
+          <p id="expDate1"></p>
+        </div>
+        <div>
+          <h3 id="expTitle2"></h3>
+          <p id="expDate2"></p>
+        </div>
       </div>
     </section>
 
-    <hr class="section-divider">
+    <section id="projects-section">
+      <h2 id="projects"></h2>
+      <hr class="section-divider-simple">
 
-    <section class="exp-right">
-      <h2 data-en="About Me" data-es="Sobre mí" data-fr="À propos">About Me</h2>
-      <p data-en="about1" data-es="about1-es" data-fr="about1-fr">
-        N/A.
-      </p>
-      <p data-en="about2" data-es="about2-es" data-fr="about2-fr">
-        N/A.
-      </p>
-      <p data-en="about3" data-es="about3-es" data-fr="about3-fr">
-        N/A.
-      </p>
+      <table class="projects">
+        <thead>
+          <tr>
+            <th id="year"></th>
+            <th id="project"></th>
+            <th id="company"></th>
+            <th id="tech"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024</td>
+            <td id="project7"></td>
+            <td>Personal</td>
+            <td>HTML, Javascript, CSS</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td id="project8"></td>
+            <td>Personal</td>
+            <td>Python, Javascript</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <script src="docs/script.js"></script>
+    <section id="skills-section">
+      <h2 id="skills"></h2>
+      <hr class="section-divider-simple">
+      <!-- Ejemplo: podrías usar IDs o data-i18n si luego amplías el JSON -->
+      <table>
+        <thead>
+          <tr>
+            <th id="technology"></th>
+            <th id="proficiency"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Python</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Intermediate</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="languages-section">
+      <h2 id="languages"></h2>
+      <hr class="section-divider-simple">
+      <ul>
+        <li>French – Advanced</li>
+		<li>English – Advanced</li>
+		<li>Spanish – Native</li>
+        
+      </ul>
+    </section>
+
+    <section id="strengths-section">
+      <h2 id="strengths"></h2>
+      <hr class="section-divider-simple">
+      <ul>
+        <li>Debugging issues</li>
+        <li>Planning</li>
+        <li>Teamwork</li>
+      </ul>
+    </section>
+
+    <section id="certifications-section">
+      <h2 id="certifications"></h2>
+      <hr class="section-divider-simple">
+      <!-- Rellena con tus certificaciones reales -->
+      <ul>
+        <li>ETH Zürich (2017) : ASD.1x: Agile Software Development</li>
+      </ul>
+    </section>
+
+    <section id="learning-section">
+      <h2 id="learning"></h2>
+      <hr class="section-divider-simple">
+      <ul>
+        <li>Cloud Computing</li>
+      </ul>
+    </section>
+
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
