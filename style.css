@@ -1,8 +1,11 @@
 /* ==========================================================================
-   style_new.css - integrated styles (base, header, profile, contact, utils)
-   ========================================================================== */
+
+style_new.css - integrated styles (base, header, profile, contact, utils)
+
+========================================================================== */
 
 /* Box-sizing + sensible defaults */
+
 *,
 *::before,
 *::after {
@@ -10,6 +13,7 @@
 }
 
 /* Base */
+
 html,
 body {
   height: 100%;
@@ -23,6 +27,7 @@ body {
 }
 
 /* Links */
+
 a {
   color: #ff9900;
   text-decoration: none;
@@ -34,6 +39,7 @@ a:focus {
 }
 
 /* Typography */
+
 h1,
 h2,
 h3,
@@ -49,6 +55,7 @@ h4 {
 }
 
 /* Layout container */
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -56,6 +63,7 @@ h4 {
 }
 
 /* Sections / dividers */
+
 section {
   margin-top: 2rem;
 }
@@ -68,6 +76,7 @@ section {
 }
 
 /* Header */
+
 header.intro {
   background-color: #0a192f;
   padding: 2rem 0;
@@ -75,6 +84,7 @@ header.intro {
 }
 
 /* Header layout: image + text */
+
 .header-flex {
   display: flex;
   align-items: center;
@@ -84,6 +94,7 @@ header.intro {
 }
 
 /* Profile picture: circular */
+
 .profile-pic {
   width: 200px;
   height: 200px;
@@ -98,6 +109,7 @@ header.intro {
 }
 
 /* Header text */
+
 .header-text {
   max-width: 600px;
   text-align: left;
@@ -108,6 +120,7 @@ header.intro {
 }
 
 /* Experience grid */
+
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -117,6 +130,7 @@ header.intro {
 }
 
 /* Tables */
+
 table {
   width: 40%;
   border-collapse: collapse;
@@ -152,6 +166,7 @@ table tbody tr {
 }
 
 /* Projects table (full width) */
+
 table.projects {
   width: 100%;
   border-collapse: collapse;
@@ -181,7 +196,21 @@ table.projects tbody tr {
   border-bottom: 2px solid #233554;
 }
 
+/* Proporción columnas Year : Project : Technologies = 1 : 2 : 2 */
+table.projects th:nth-child(1),
+table.projects td:nth-child(1) {
+  width: 20%;
+}
+
+table.projects th:nth-child(2),
+table.projects td:nth-child(2),
+table.projects th:nth-child(3),
+table.projects td:nth-child(3) {
+  width: 40%;
+}
+
 /* Tags */
+
 .tech-tag {
   display: inline-block;
   background-color: rgba(100, 255, 218, 0.06);
@@ -195,8 +224,10 @@ table.projects tbody tr {
 }
 
 /* ==========================================================================
-   CONTACT ICONS
-   ========================================================================== */
+
+CONTACT ICONS
+
+========================================================================== */
 
 .contact-icons {
   display: flex;
@@ -207,6 +238,7 @@ table.projects tbody tr {
 }
 
 /* Circular button wrapper for each icon */
+
 .icon-link {
   display: inline-flex;
   align-items: center;
@@ -228,6 +260,7 @@ table.projects tbody tr {
 }
 
 /* Hide possible link text */
+
 .icon-link > span,
 .icon-link > .link-text {
   display: none !important;
@@ -239,6 +272,7 @@ table.projects tbody tr {
 }
 
 /* Icon image */
+
 .contact-icon {
   display: block;
   width: 110%;
@@ -250,6 +284,7 @@ table.projects tbody tr {
 }
 
 /* Hover / focus / active states */
+
 .icon-link:hover,
 .icon-link:focus {
   transform: translateY(-3px) scale(1.07);
@@ -262,20 +297,24 @@ table.projects tbody tr {
 }
 
 /* Image effect on hover */
+
 .icon-link:hover .contact-icon,
 .icon-link:focus .contact-icon {
   transform: scale(1.06);
 }
 
 /* Visible focus ring */
+
 .icon-link:focus {
   outline: 3px solid rgba(255, 153, 0, 0.16);
   outline-offset: 4px;
 }
 
 /* ==========================================================================
-   UTILIDADES
-   ========================================================================== */
+
+UTILIDADES
+
+========================================================================== */
 
 .section-divider-simple {
   border: none;
@@ -285,6 +324,7 @@ table.projects tbody tr {
 }
 
 /* Visually hidden (labels, etc.) */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -298,6 +338,7 @@ table.projects tbody tr {
 }
 
 /* Responsive */
+
 @media (max-width: 520px) {
   .header-flex {
     gap: 1rem;
@@ -313,15 +354,17 @@ table.projects tbody tr {
     gap: 1rem;
   }
 
+  /* Círculo más pequeño en móvil */
   .icon-link {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
   }
 
+  /* Icono sigue llenando el círculo */
   .contact-icon {
-    width: 36px;
-    height: 36px;
+    width: 110%;
+    height: 110%;
   }
 
   .container {
@@ -350,8 +393,10 @@ table.projects tbody tr {
 }
 
 /* ==========================================================================
-   LANGUAGE SWITCHER (selector idioma arriba derecha)
-   ========================================================================== */
+
+LANGUAGE SWITCHER (selector idioma arriba derecha)
+
+========================================================================== */
 
 .language-switcher {
   position: absolute;
@@ -380,6 +425,7 @@ table.projects tbody tr {
 }
 
 /* Label visible para "Language" */
+
 .language-label {
   margin-right: 8px;
   color: #ccd6f6;
@@ -400,8 +446,10 @@ table.projects tbody tr {
 }
 
 /* ==========================================================================
-   BOTÓN "PROJECTOS" (arriba izquierda) + MENÚ
-   ========================================================================== */
+
+BOTÓN "PROJECTOS" (arriba izquierda) + MENÚ
+
+========================================================================== */
 
 .topbar-projects {
   position: absolute;
@@ -433,6 +481,7 @@ table.projects tbody tr {
 }
 
 /* Caja del menú desplegable */
+
 .dropdown {
   position: absolute;
   top: 135%;
@@ -449,11 +498,13 @@ table.projects tbody tr {
 }
 
 /* Clase que muestra el menú */
+
 .dropdown.open {
   display: block;
 }
 
 /* Elementos del menú */
+
 .dropdown-item {
   display: block;
   width: 100%;
